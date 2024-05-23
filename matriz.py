@@ -97,7 +97,7 @@ def sabado():
 
 contador = 0
 listap = []
-
+njbjvkbvnkmbvkmb
 def recorrdio():
     for i in range (len(supermercado)):
         if supermercado[i][0] == p:
@@ -120,4 +120,4 @@ print ("Su lista de numeros es ", listap)
 for i in supermercado:
     print(i)
 
-#version 3
+#version 5
