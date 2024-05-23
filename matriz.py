@@ -6,7 +6,7 @@ supermercado = [
 
 #Funcion de bulce para agregar los productos que se vendio
 def productos():
-    global x, pf
+    global x, pf, p
     while x <= c:
         p = input(f"Ingrese el producto número {x} que vendió: ") #p -> productos
         supermercado.append([p])
@@ -18,6 +18,7 @@ def productos():
         viernes()
         sabado()
         print("-" * 30)
+        recorrdio()
         x += 1
         pf += 1
 
@@ -94,6 +95,16 @@ def sabado():
         print("Esto no debe salir.")
 
 
+contador = 0
+listap = []
+
+def recorrdio():
+    for i in range (len(supermercado)):
+        if supermercado[i][0] == p:
+            for j in i:
+                listap.append(j)
+
+
 
 
 #Inicio codigo.
@@ -102,8 +113,11 @@ x = 1
 pf = 3 
 productos()
 
+print ("Su lista de numeros es ", listap)
+ 
+
 #Imprimir matriz
 for i in supermercado:
     print(i)
 
-#version 1
+#version 3
