@@ -75,5 +75,5 @@ print("Las ventas diarias de los productos en su orden es:", valorp)
 
 print("La venta total de los prodcutos vendidos es:", sum(valorp))
 
-#version 7
+#version 8
 
