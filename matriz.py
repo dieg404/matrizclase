@@ -35,21 +35,25 @@ def martes():
 def miercoles():
     c1 = int(input(f"Ingrese la cantidad que vendió del producto el día Miércoles: "))
     supermercado[pf].insert(3, c1)
+    recorrdio()
 
 # Función para agregar cuantos productos se vendieron por día, Jueves.
 def jueves():
     c1 = int(input(f"Ingrese la cantidad que vendió del producto el día Jueves: "))
     supermercado[pf].insert(4, c1)
+    recorrdio()
 
 # Función para agregar cuantos productos se vendieron por día, Viernes.
 def viernes():
     c1 = int(input(f"Ingrese la cantidad que vendió del producto el día Viernes: "))
     supermercado[pf].insert(5, c1)
+    recorrdio()
 
 # Función para agregar cuantos productos se vendieron por día, Sábado.
 def sabado():
     c1 = int(input(f"Ingrese la cantidad que vendió del producto el día Sábado: "))
     supermercado[pf].insert(6, c1)
+    recorrdio()
 
 
 def recorrdio():
@@ -75,4 +79,5 @@ productos()
 for i in supermercado:
     print(i)
 
-#version 5
+#version 7
+
