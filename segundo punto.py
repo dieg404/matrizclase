@@ -48,10 +48,10 @@ def proyecto():
 def recorrido():
     global p, pf
     for i in range(1, len(estudiantes)):
-        suma = 0
-        for j in range(1, len(estudiantes[i])):
-            suma += estudiantes[i][j]
-        promedioe.append(suma / 5)
+        sum = 0
+        for j in range (1, len(estudiantes [i])):
+            sum += estudiantes[i][j]
+    promedioe.append(sum/5)
 
 # Inicialización de variables
 promedioe = []
@@ -68,16 +68,15 @@ for i in estudiantes:
 print("El promedio de cada estudiante es: ", promedioe)
 
 # Encontrar el estudiante con el promedio más alto y más bajo
-promediom = max(promedioe)
-promediomin = min(promedioe)
-indicem = promedioe.index(promediom)
-indicemin = promedioe.index(promediomin)
+max_promedio = max(promedioe)
+min_promedio = min(promedioe)
+indice_max = promedioe.index(max_promedio)
+indice_min = promedioe.index(min_promedio)
 
-promedio_e_max = estudiantes[indicem + 1][0]
-promedio_e_min = estudiantes[indicemin + 1][0]
+estudiante_max_promedio = estudiantes[indice_max + 1][0]
+estudiante_min_promedio = estudiantes[indice_min + 1][0]
 
-print(f"El estudiante con el promedio más alto es: {promedio_e_max} con un promedio de {promediom}")
-print(f"El estudiante con el promedio más bajo es: {promedio_e_min} con un promedio de {promediomin}")
-
+print(f"El estudiante con el promedio más alto es: {estudiante_max_promedio} con un promedio de {max_promedio}")
+print(f"El estudiante con el promedio más bajo es: {estudiante_min_promedio} con un promedio de {min_promedio}")
 
 #version 11
