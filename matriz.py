@@ -6,7 +6,7 @@ supermercado = [
 def productos():
     global x, pf, p
     while x <= c:
-        p = input(f"Ingrese el producto número {x} que vendió: ") #p -> productos
+        p = input(f"Ingrese el nombre del producto número {x} que vendió: ") #p -> productos
         supermercado.append([p])
 
         lunes()
@@ -53,12 +53,21 @@ def sabado():
 
 
 def recorrdio():
-    sum = 0
     global p, pf
     for i in range(1, len(supermercado)):
+        sum = 0
         for j in range (1, len(supermercado [i])):
             sum += supermercado[i][j]
     valorp.append(sum)
+
+def recorridod():
+    global p, pf, diariop
+    for i in range(1, len(supermercado)):
+        for j in range(1, len(supermercado[i])):
+            diariop[j-1] += supermercado[i][j]
+    
+    
+diariop =[0,0,0,0,0,0]  
         
 valorp = []
 
@@ -67,13 +76,15 @@ c = int(input("Ingrese la cantidad de productos que vendio: ")) #c -> cantidad
 x = 1
 pf = 1 
 productos()
+recorridod()
 
 #Imprimir matriz
 for i in supermercado:
     print(i)
-print("Las ventas diarias de los productos en su orden es:", valorp)
+print("La venta total de cada producto durante la semana en su orden es: ", valorp)
 
 print("La venta total de los prodcutos vendidos es:", sum(valorp))
 
-#version 8
+print("La venta diaria de los productos en la semana es", diariop)
 
+#version 9
