@@ -1,13 +1,21 @@
-supermercado = [
-    ["Productos", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"]
-]
+estudiantes = [
+              ["Estudiantes"], ["Examen 1"], ["Examen 2"], ["Tarea 1"], ["Tarea 2"], ["Proyecto"]
+              ] 
 
-# Función de bucle para agregar los productos que se vendieron
-def productos():
-    global x, pf, p
+
+#Funcion de bucle para agregar los estudiantes y sus notas
+def notas():
+    global x, pf, e
     while x <= c:
-        p = input(f"Ingrese el nombre del producto número {x} que vendió: ")  # p -> productos
-        supermercado.append([p])
+        e = input(f"Ingrese el nombre del estudiante número {x}: ") #e -> estudiantes
+        estudiantes.append([e])
+
+         
+
+
+
+
+
 
         lunes()
         martes()
@@ -16,14 +24,15 @@ def productos():
         viernes()
         sabado()
         print("-" * 30)
-        recorrido()
+        recorrdio()
         x += 1
         pf += 1
+        
 
-# Función para agregar cuantos productos se vendieron por día, Lunes.
-def lunes():
-    c1 = int(input(f"Ingrese la cantidad que vendió del producto el día Lunes: "))
-    supermercado[pf].insert(1, c1) 
+# Función para agregar la nota del examen 1
+def examen1():
+    c1 = int(input(f"Ingrese la nota que obtuvo el estudiante en el examen 1: "))
+    estudiantes[pf].insert(1, c1) 
 
 # Función para agregar cuantos productos se vendieron por día, Martes.
 def martes():
@@ -50,46 +59,40 @@ def sabado():
     c1 = int(input(f"Ingrese la cantidad que vendió del producto el día Sábado: "))
     supermercado[pf].insert(6, c1)
 
-# Función para calcular las ventas totales de cada producto
-def recorrido():
+
+def recorrdio():
     global p, pf
     for i in range(1, len(supermercado)):
-        suma = 0
-        for j in range(1, len(supermercado[i])):
-            suma += supermercado[i][j]
-        valorp.append(suma)
+        sum = 0
+        for j in range (1, len(supermercado [i])):
+            sum += supermercado[i][j]
+    valorp.append(sum)
 
-# Función para calcular las ventas diarias de todos los productos
 def recorridod():
     global p, pf, diariop
     for i in range(1, len(supermercado)):
         for j in range(1, len(supermercado[i])):
             diariop[j-1] += supermercado[i][j]
-
-# Inicialización de variables
-diariop = [0, 0, 0, 0, 0, 0]
+    
+    
+diariop =[0,0,0,0,0,0]  
+        
 valorp = []
 
-# Inicio del código
-c = int(input("Ingrese la cantidad de productos que vendio: "))  # c -> cantidad
+#Inicio codigo.
+c = int(input("Ingrese la cantidad de productos que vendio: ")) #c -> cantidad
 x = 1
 pf = 1 
 productos()
 recorridod()
 
-# Imprimir matriz
+#Imprimir matriz
 for i in supermercado:
     print(i)
 print("La venta total de cada producto durante la semana en su orden es: ", valorp)
-print("La venta total de los productos vendidos es:", sum(valorp))
+
+print("La venta total de los prodcutos vendidos es:", sum(valorp))
+
 print("La venta diaria de los productos en la semana es", diariop)
 
-# Encontrar el producto más vendido
-max_venta = max(valorp)
-indice_max = valorp.index(max_venta)
-producto_mas_vendido = supermercado[indice_max + 1][0]
-
-print(f"El producto más vendido de la semana es: {producto_mas_vendido}.")
-
-
-#version 10
+#version 9
