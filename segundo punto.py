@@ -1,5 +1,5 @@
 estudiantes = [
-              ["Estudiantes"], ["Examen 1"], ["Examen 2"], ["Tarea 1"], ["Tarea 2"], ["Proyecto"]
+              ["Estudiantes", "Examen 1", "Examen 2", "Tarea 1", "Tarea 2", "Proyecto"]
               ] 
 
 
@@ -10,19 +10,11 @@ def notas():
         e = input(f"Ingrese el nombre del estudiante número {x}: ") #e -> estudiantes
         estudiantes.append([e])
 
-         
-
-
-
-
-
-
-        lunes()
-        martes()
-        miercoles()
-        jueves()
-        viernes()
-        sabado()
+        examen1()
+        examen2()
+        tarea1()
+        tarea2()
+        proyecto()
         print("-" * 30)
         recorrdio()
         x += 1
@@ -34,65 +26,51 @@ def examen1():
     c1 = int(input(f"Ingrese la nota que obtuvo el estudiante en el examen 1: "))
     estudiantes[pf].insert(1, c1) 
 
-# Función para agregar cuantos productos se vendieron por día, Martes.
-def martes():
-    c1 = int(input(f"Ingrese la cantidad que vendió del producto el día Martes: "))
-    supermercado[pf].insert(2, c1)
+# Función para agregar la nota del examen 2
+def examen2():
+    c1 = int(input(f"Ingrese la nota que obtuvo el estudiante en el examen 2: "))
+    estudiantes[pf].insert(2, c1)
 
-# Función para agregar cuantos productos se vendieron por día, Miércoles.
-def miercoles():
-    c1 = int(input(f"Ingrese la cantidad que vendió del producto el día Miércoles: "))
-    supermercado[pf].insert(3, c1)
+# Función para agregar la nota de la tarea 1
+def tarea1():
+    c1 = int(input(f"Ingrese la nota que obtuvo el estudiante en la tarea 1: "))
+    estudiantes[pf].insert(3, c1)
 
-# Función para agregar cuantos productos se vendieron por día, Jueves.
-def jueves():
-    c1 = int(input(f"Ingrese la cantidad que vendió del producto el día Jueves: "))
-    supermercado[pf].insert(4, c1)
+# Función para agregar la nota de la tarea 2
+def tarea2():
+    c1 = int(input(f"Ingrese la nota que obtuvo el estudiante en la tarea 2: "))
+    estudiantes[pf].insert(4, c1)
 
-# Función para agregar cuantos productos se vendieron por día, Viernes.
-def viernes():
-    c1 = int(input(f"Ingrese la cantidad que vendió del producto el día Viernes: "))
-    supermercado[pf].insert(5, c1)
-
-# Función para agregar cuantos productos se vendieron por día, Sábado.
-def sabado():
-    c1 = int(input(f"Ingrese la cantidad que vendió del producto el día Sábado: "))
-    supermercado[pf].insert(6, c1)
+# Función para agregar la nota del proyecto
+def proyecto():
+    c1 = int(input(f"Ingrese la nota que obtuvo el estudiante en el proyecto: "))
+    estudiantes[pf].insert(5, c1)
 
 
 def recorrdio():
     global p, pf
-    for i in range(1, len(supermercado)):
+    for i in range(1, len(estudiantes)):
         sum = 0
-        for j in range (1, len(supermercado [i])):
-            sum += supermercado[i][j]
-    valorp.append(sum)
+        for j in range (1, len(estudiantes [i])):
+            sum += estudiantes[i][j]
+    promedioe.append(sum/5)
 
-def recorridod():
-    global p, pf, diariop
-    for i in range(1, len(supermercado)):
-        for j in range(1, len(supermercado[i])):
-            diariop[j-1] += supermercado[i][j]
     
     
 diariop =[0,0,0,0,0,0]  
         
-valorp = []
+promedioe = []
 
 #Inicio codigo.
-c = int(input("Ingrese la cantidad de productos que vendio: ")) #c -> cantidad
+c = int(input("Ingrese la cantidad de estudiantes: ")) #c -> cantidad
 x = 1
 pf = 1 
-productos()
-recorridod()
+notas()
 
 #Imprimir matriz
-for i in supermercado:
+for i in estudiantes:
     print(i)
-print("La venta total de cada producto durante la semana en su orden es: ", valorp)
+print("El promedio de cada estudiante es: ", promedioe)
 
-print("La venta total de los prodcutos vendidos es:", sum(valorp))
-
-print("La venta diaria de los productos en la semana es", diariop)
 
 #version 9
