@@ -92,4 +92,4 @@ producto_mas_vendido = range(len(supermercado[indice_max + 1][0]))
 print(f"El producto más vendido de la semana es: {producto_mas_vendido} con un total de {max_venta} unidades.")
 
 
-#version 10
+#version 12
