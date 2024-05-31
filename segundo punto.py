@@ -79,4 +79,4 @@ estudiante_min_promedio = estudiantes[indice_min + 1][0]
 print(f"El estudiante con el promedio más alto es: {estudiante_max_promedio} con un promedio de {max_promedio}")
 print(f"El estudiante con el promedio más bajo es: {estudiante_min_promedio} con un promedio de {min_promedio}")
 
-#version 11
+#version 12

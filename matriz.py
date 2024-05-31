@@ -87,9 +87,9 @@ print("La venta diaria de los productos en la semana es", diariop)
 # Encontrar el producto más vendido
 max_venta = max(valorp)
 indice_max = valorp.index(max_venta)
-producto_mas_vendido = supermercado[indice_max + 1][0]
+producto_mas_vendido = range(len(supermercado[indice_max + 1][0]))
 
-print(f"El producto más vendido de la semana es: {producto_mas_vendido}.")
+print(f"El producto más vendido de la semana es: {producto_mas_vendido} con un total de {max_venta} unidades.")
 
 
 #version 10
